@@ -80,8 +80,7 @@
 
 <body class="overflow-x-hidden text-blue-900 bg-gray-300">
 
-  <header x-data="{ open: false }" class="fixed top-0 z-50 flex items-stretch justify-between w-screen bg-blue-900 md:justify-center md:bg-opacity-0 ">
-
+  <header x-data="{ open: false }" id="header" class="fixed top-0 z-50 flex items-stretch justify-between w-screen bg-blue-900 md:bg-opacity-0 md:justify-center">
     <a href="#home" class="h-16 bg-white logo md:hidden">
       <img src="img/logo.svg" alt="JNL Lift Services" class="h-full">
     </a>
@@ -122,7 +121,7 @@
   </header>
 
   <section id="home" class="relative h-screen bg-pink-100 ">
-    <!-- <video src="img/adobe_spark_video.mp4" class="absolute object-cover w-full h-full" autoplay muted loop></video> bg-gradient-to-br bg-clip-text from-blue-900 to-blue-700-->
+    <!-- <video src="img/london.mp4" class="absolute object-cover w-full h-full" autoplay muted loop></video> bg-gradient-to-br bg-clip-text from-blue-900 to-blue-700 -->
     <img src="img/london2.jpg" class="absolute object-cover w-full h-full">
     <!-- overlay -->
     <div class="absolute flex items-center justify-start w-full h-full bg-blue-300 bg-opacity-0 lg:ml-1">
@@ -257,42 +256,37 @@
       class="relative grid max-w-5xl grid-cols-4 gap-4 px-4 mx-auto mt-16 text-center sm:grid-cols-8 md:grid-cols-12">
       <figure class="relative h-56 col-span-4 group hover-effect">
         <img src="img/gallery/Berkshire-court-bracknell.jpg" class="object-cover w-full h-full">
-        <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-25 group-hover:bg-opacity-75">
+        <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-75 group-hover:bg-opacity-75">
           <h2 class="py-1 text-xl font-bold uppercase">Berkshire Court</h2>
-          <p class="px-2 text-sm sm:text-base">Lorem ipsum dolor sit. Voluptatem magnam voluptates
-            quibusdam dolorum</p>
+          <p class="px-2 text-sm sm:text-base">Bracknell, Berkshire</p>
         </figcaption>
       </figure>
       <figure class="relative h-56 col-span-4 group hover-effect">
         <img src="img/gallery/compass-house.jpg" class="object-cover w-full h-full">
-        <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-25 group-hover:bg-opacity-75">
+        <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-75 group-hover:bg-opacity-75">
           <h2 class="py-1 text-xl font-bold uppercase">Compass House</h2>
-          <p class="px-2 text-sm sm:text-base">Lorem ipsum dolor sit. Voluptatem magnam voluptates
-            quibusdam dolorum</p>
+          <p class="px-2 text-sm sm:text-base">Bracknell, Berkshire</p>
         </figcaption>
       </figure>
       <figure class="relative h-56 col-span-4 group hover-effect">
         <img src="img/gallery/Park-avenue-hotel.jpg" class="object-cover w-full h-full">
-        <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-25 group-hover:bg-opacity-75">
+        <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-75 group-hover:bg-opacity-75">
           <h2 class="py-1 text-xl font-bold uppercase">Park Avenue Hotel</h2>
-          <p class="px-2 text-sm sm:text-base">Lorem ipsum dolor sit. Voluptatem magnam voluptates
-            quibusdam dolorum</p>
+          <p class="px-2 text-sm sm:text-base">East London</p>
         </figcaption>
       </figure>
       <figure class="relative h-56 col-span-4 group hover-effect">
         <img src="img/gallery/kensington-suite-hotel.jpg" class="object-cover w-full h-full">
-        <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-25 group-hover:bg-opacity-75">
+        <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-75 group-hover:bg-opacity-75">
           <h2 class="py-1 text-xl font-bold uppercase">Kensington Suites Hotel</h2>
-          <p class="px-2 text-sm sm:text-base">Lorem ipsum dolor sit. Voluptatem magnam voluptates
-            quibusdam dolorum</p>
+          <p class="px-2 text-sm sm:text-base">Central London</p>
         </figcaption>
       </figure>
       <figure class="relative h-56 col-span-4 group hover-effect">
-        <img src="img/gallery/5.jpg" class="object-cover w-full h-full">
-        <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-25 group-hover:bg-opacity-75">
-          <h2 class="py-1 text-xl font-bold uppercase">Lorem Ipsum</h2>
-          <p class="px-2 text-sm sm:text-base">Lorem ipsum dolor sit. Voluptatem magnam voluptates
-            quibusdam dolorum</p>
+        <img src="img/gallery/bayis-sheli.jpg" class="object-cover w-full h-full">
+        <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-75 group-hover:bg-opacity-75">
+          <h2 class="py-1 text-xl font-bold uppercase">Bayis Sheli</h2>
+          <p class="px-2 text-sm sm:text-base">Central London</p>
         </figcaption>
       </figure>
      
@@ -399,7 +393,20 @@
       </div>
     </div>
   </footer>
+  <!-- Navbar transparant to solid on scroll -->
+  <script>
+    const header = document.getElementById('header')
 
+    window.addEventListener('scroll', e => {
+      const halfWay = (window.innerHeight / 2) - 220
+      setBgOpacity(this.scrollY < halfWay);
+    })
+
+    function setBgOpacity(shouldBeTransparent) {
+      header.classList.remove(shouldBeTransparent ? 'md:bg-opacity-100' : 'md:bg-opacity-0')
+      header.classList.add(shouldBeTransparent ? 'md:bg-opacity-0' : 'md:bg-opacity-100')
+    }
+  </script>
   <!-- Alpine.js -->
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.min.js" defer></script>
 </body>
