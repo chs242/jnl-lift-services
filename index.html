@@ -85,12 +85,10 @@
 </head>
 
 <body class="overflow-x-hidden text-blue-900 bg-gray-300">
-
   <header x-data="{ open: false }" id="header" class="fixed top-0 z-50 flex items-stretch justify-between w-screen bg-blue-900 md:bg-opacity-0 md:justify-center">
     <a href="#home" class="h-16 bg-white logo md:hidden">
       <img src="img/logo.svg" alt="JNL Lift Services" class="h-full">
-    </a>
-
+    </a>    
     <nav
       class="font-montserrat items-center hidden mx-12 space-x-8 text-sm font-semibold tracking-wider text-gray-100 uppercase sm:flex xl:text-lg">
     
@@ -98,10 +96,9 @@
       <a href="#about">About</a>
       <a href="#home" class="h-16 my-2 bg-white logo"><img src="img/logo.svg" alt="JNL Lift Services" class="h-full"></a>
       <a href="#projects">Projects</a>
-      <a href="#contact">24/7 Contact</a>
+      <a href="#contact">Contact</a>
       <!-- <a class="" href="tel:02045128520">24/7 Contact<br>020 4512 8520</a> -->
     </nav>
-
     <button @click="open = !open" class="p-3 mr-3 sm:hidden focus:outline-none">
       <svg x-show="!open" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 text-blue-200">
         <path fill-rule="evenodd"
@@ -122,7 +119,7 @@
       <a class="px-3 py-1 rounded hover:bg-blue-800" href="#services">Services</a>
       <a class="px-3 py-1 rounded hover:bg-blue-800" href="#about">About</a>
       <a class="px-3 py-1 rounded hover:bg-blue-800" href="#projects">Projects</a>
-      <a class="px-3 py-1 rounded hover:bg-blue-800" href="#contact">24/7 Contact</a>
+      <a class="px-3 py-1 rounded hover:bg-blue-800" href="#contact">24/7 contact</a>
     </nav>
 
   </header>
@@ -139,6 +136,7 @@
           JNL Lift Services</h1>
         <p class="text-sm text-center font-semibold fade-in-left text-white md:text-md lg:text-white lg:text-lg bebas">
           Offering the complete lift package incorporating Quality, Safety and Security
+          <br> <br>CALL US 24/7 - 020 4512 8520
           <br>
           
         </p>
@@ -294,6 +292,13 @@
         <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-75 group-hover:bg-opacity-75">
           <h2 class="py-1 text-xl font-bold uppercase">Bayis Sheli</h2>
           <p class="px-2 text-sm sm:text-base">Central London</p>
+        </figcaption>
+      </figure>
+      <figure class="relative h-56 col-span-4 group hover-effect">
+        <img src="img/gallery/bayis-sheli.jpg" class="object-cover w-full h-full">
+        <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-75 group-hover:bg-opacity-75">
+          <h2 class="py-1 text-xl font-bold uppercase">Station Road</h2>
+          <p class="px-2 text-sm sm:text-base">New Barnet</p>
         </figcaption>
       </figure>
      
