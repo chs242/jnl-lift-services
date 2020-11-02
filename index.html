@@ -342,7 +342,7 @@
             please call: 0208 4512 8520 or fill out the following form and one of our
             members of staff will gladly follow this up
           </p>
-          <form class="flex flex-col items-stretch mt-6 space-y-4" name="contact" method="POST" data-netlify="true">
+          <form name="contact" method="POST" netlify class="flex flex-col items-stretch mt-6 space-y-4">
 
             <input type="hidden" name="form-name" value="contact">
 
@@ -350,8 +350,11 @@
             <input type="email" class="bg-gray-100 form-input" placeholder="Email *">
             <input type="text" class="bg-gray-100 form-input" placeholder="Subject *">
             <textarea type="text" class="bg-gray-100 form-input" rows="5" placeholder="Message *"></textarea>
-            <input type="submit" value="Send"
-              class="px-4 py-2 text-gray-100 bg-blue-900 rounded focus:outline-none focus:shadow-outline">
+            <input 
+              type="submit" 
+              value="Send"
+              class="px-4 py-2 text-gray-100 bg-blue-900 rounded focus:outline-none focus:shadow-outline"
+            >
           </form>
         </div>
 
