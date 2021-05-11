@@ -84,7 +84,86 @@
         opacity: 1
       }
     }
-    
+
+    /* carousel */
+/* Slider */
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.logo-carousel {
+  overflow: inherit;
+  border-top: 1px solid #353535;
+  border-bottom: 1px solid #353535;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-track::before,
+.slick-track::after {
+  display: table;
+  content: '';
+}
+
+.slick-track::after {
+  clear: both;
+}
+
+.slick-track {
+  padding: 1rem 0;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  background: url(https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/arrow.svg?sanitize=true) center no-repeat;
+  color: #fff;
+  filter: invert(77%) sepia(32%) saturate(1%) hue-rotate(344deg) brightness(105%) contrast(103%);
+  border: none;
+  width: 2rem;
+  height: 1.5rem;
+  text-indent: -10000px;
+  margin-top: -16px;
+  z-index: 99;
+}
+
+.slick-arrow.slick-next {
+  right: -40px;
+  transform: rotate(180deg);
+}
+
+.slick-arrow.slick-prev {
+  left: -40px;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  .slick-arrow {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+  
+.row {
+  overflow: hidden;
+}  
+
+
   </style>
   <link rel="icon" href="favicon.png" type="image">
   <title>JNL Lift Services</title>
@@ -94,8 +173,8 @@
 
   <header x-data="{ open: false }" id="header" class="fixed z-50 ">
 
-    <div class="bg-gray-700 text-gray-100 py-4 text-center flex">
-      <p class="px-4">24 hr Lift helpline: 020 8455 0596</p><p class="hidden md:block px-4">General Enquires - E: Info@jnllifts.co.uk</p>
+    <div class="bg-gray-700 text-gray-100 py-4 text-center flex uppercase font-bold text-sm ">
+      <p class="px-4">24 hr Lift helpline: 020 4512 8520</p><p class="hidden md:block px-4">General Enquires - E: Info@jnllifts.co.uk</p>
     </div>
 
     <div class="flex items-stretch justify-between w-screen bg-blue-900 md:bg-opacity-0 md:justify-center">
@@ -103,12 +182,13 @@
         <img src="img/logo.svg" alt="JNL Lift Services" class="h-full">
       </a>       
     
-      <nav class="font-montserrat items-center justify-center hidden w-full space-x-8 text-sm font-semibold tracking-wider bg-blue-900 text-gray-100 uppercase sm:flex xl:text-">
-        <a href="#services">Services</a>
+      <nav class="font-montserrat items-center justify-between hidden w-full space-x-8 text-sm font-semibold tracking-wider bg-blue-900  uppercase sm:flex xl:text-">
+        <a href="#home" class="h-16 my-1 px-10 logo"><img src="img/logo.svg" alt="JNL Lift Services" class="h-full"></a>
+        ,<div class="w-full px-12 flex justify-end space-x-8 text-sm font-semibold tracking-wider text-gray-100"><a href="#services">Services</a>
         <a href="#about">About</a>
-        <a href="#home" class="h-16 my-2 bg-white logo"><img src="img/logo.svg" alt="JNL Lift Services" class="h-full"></a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#partners">Partners</a>
+        <a href="#contact">Contact</a></div>
       </nav>
 
       <button @click="open = !open" class="p-3 mr-3 sm:hidden focus:outline-none">
@@ -132,6 +212,7 @@
       <a class="px-3 py-1 rounded hover:bg-blue-800" href="#services">Services</a>
       <a class="px-3 py-1 rounded hover:bg-blue-800" href="#about">About</a>
       <a class="px-3 py-1 rounded hover:bg-blue-800" href="#projects">Projects</a>
+      <a class="px-3 py-1 rounded hover:bg-blue-800" href="#partners">Partners</a>
       <a class="px-3 py-1 rounded hover:bg-blue-800" href="#contact">Contact</a>
     </nav>
   </div>
@@ -140,20 +221,19 @@
 
   <section id="home" class="relative h-screen bg-pink-100 ">
     <!-- <video src="img/london.mp4" class="absolute object-cover w-full h-full" autoplay muted loop></video> bg-gradient-to-br bg-clip-text from-blue-900 to-blue-700 -->
-    <img src="img/building.jpg" class="absolute object-cover w-full h-full">
+    <img src="img/building.jpg" class="absolute object-cover w-full h-screen">
     <!-- overlay -->
-    <div class="absolute flex items-center justify-center w-full h-full bg-blue-300 bg-opacity-0">
-      <div class="px-16 py-10 bg-blue-800 bg-opacity-50 rounded-lg rotate-in-2-cw lg:bg-opacity-75">
-
+    <div class="absolute w-full h-full">
+      <div class="bg-gray-800 w-full h-full flex justify-start items-center bg-opacity-50">
+        <div class="px-20 lg:px-40">
         <h1
-          class="text-4xl text-center font-black text-transparent sm:text-3xl md:text-5xl lg:text-5xl text-white lg:text-white bebas header-text">
-          JNL Lift Services</h1>
-        <p class="text-sm text-center font-bold fade-in-left text-white md:text-md lg:text-white lg:text-xl bebas">
-          Offering the complete lift package incorporating Quality, Safety and Security
-          <br><br><div class="border-2 text-white text-center md:border-0"><span class="text=xs md:text-lg signika md:border-2 p-2">24/7 Emergency Response - 020 4512 8520</span></div>
-          <br>
-          
-        </p>
+          class="text-4xl font-black text-transparent sm:text-3xl md:text-5xl lg:text-5xl text-white lg:text-white bebas header-text">
+          Excellent <br>Service</h1>
+        <p class="text-sm fade-in-left text-white md:text-md lg:text-white lg:text-xl bebas">
+          Offering the complete lift package <br>incorporating Quality, Safety and Security         
+        </p><br>
+        <a href="#partners" class="text-sm py-2 px-4 rounded-full font-bold fade-in-left bg-blue-900 text-white md:text-md lg:text-white lg:text-xl lg:py-4 lg:px-6 bebas">Reviews</a>
+      </div>
       </div>
     </div>
   </section>
@@ -319,7 +399,97 @@
     </div>
   </section>
 
-  <section id="contact" class="py-16">
+
+  <section id="partners" class="mx-auto py-16 lg:w-5/6">
+
+    <h1 class="text-6xl font-bold text-center text-blue-900 uppercase">
+      <span class="relative">
+        Partners
+        <span class="absolute bottom-0 left-0 w-4/5 h-3 -mb-4 "></span>
+      </span>
+    </h1>
+    
+  <div class="mt-20">
+    <div class="row">
+      <div class="container">
+        <section class="logo-carousel slider flex flex-wrap" data-arrows="true">
+          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image1.png"></div>
+          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image2.png"></div>
+          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image3.png"></div>
+          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image4.png"></div>
+          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image5.png"></div>
+          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image6.png"></div>
+          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image7.png"></div>
+          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image8.png"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+    
+  <div class="mt-20 flex flex-wrap justify-center">
+    <div class="max-w-xs my-2 py-4 px-8 mx-2 bg-white shadow-lg rounded-lg">
+      <div>
+        <h2 class="text-gray-800 text-2xl font-semibold">Proffesional Service</h2>
+        <p class="text-gray-600">quaerat nam ex commodi hic, suscipit in a veritatis pariatur minus consequuntur!</p>
+      </div>
+      <div class="flex justify-end mt-4">
+        <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
+      </div>
+    </div>
+
+    <div class="max-w-xs my-2 py-4 px-4 mx-2 bg-white shadow-lg rounded-lg">
+      <div>
+        <h2 class="text-gray-800 text-2xl font-semibold">Excellent Customer Care</h2>
+        <p class="text-gray-600">odi hic, suscipit in a veritatis pariatur minus consequuntur!</p>
+      </div>
+      <div class="flex justify-end mt-4">
+        <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
+      </div>
+    </div>
+    
+    <div class="max-w-xs my-2 py-4 px-8 mx-2 bg-white shadow-lg rounded-lg">
+      <div>
+        <h2 class="text-gray-800 text-2xl font-semibold">Fantastic Response Time</h2>
+        <p class="text-gray-600">scipit in a veritatis pariatur minus consequuntur!</p>
+      </div>
+      <div class="flex justify-end mt-4">
+        <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
+      </div>
+    </div>
+    <div class="max-w-xs my-2 py-4 px-8 mx-2 bg-white shadow-lg rounded-lg">
+      <div>
+        <h2 class="text-gray-800 text-2xl font-semibold">Proffesional Service</h2>
+        <p class="text-gray-600">quaerat nam ex commodi hic, suscipit in a veritatis pariatur minus consequuntur!</p>
+      </div>
+      <div class="flex justify-end mt-4">
+        <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
+      </div>
+    </div>
+
+    <div class="max-w-xs my-2 py-4 px-4 mx-2 bg-white shadow-lg rounded-lg">
+      <div>
+        <h2 class="text-gray-800 text-2xl font-semibold">Excellent Customer Care</h2>
+        <p class="text-gray-600">odi hic, suscipit in a veritatis pariatur minus consequuntur!</p>
+      </div>
+      <div class="flex justify-end mt-4">
+        <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
+      </div>
+    </div>
+    
+    <div class="max-w-xs my-2 py-4 px-8 mx-2 bg-white shadow-lg rounded-lg">
+      <div>
+        <h2 class="text-gray-800 text-2xl font-semibold">Fantastic Response Time</h2>
+        <p class="text-gray-600">scipit in a veritatis pariatur minus consequuntur!</p>
+      </div>
+      <div class="flex justify-end mt-4">
+        <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+  <section id="contact" class="pb-16">
 
     <h1 class="text-6xl font-bold text-center text-blue-900 uppercase">
       <span class="relative">
