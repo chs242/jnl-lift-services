@@ -163,26 +163,37 @@
   overflow: hidden;
 }  
 
-
+  
   </style>
   <link rel="icon" href="favicon.png" type="image">
+  <link rel="stylesheet" href="https://use.fontawesome.com/f1badc8473.css">
   <title>JNL Lift Services</title>
+  <script src="https://use.fontawesome.com/522a520d0d.js"></script>
 </head>
 
 <body class="overflow-x-hidden text-blue-900 bg-gray-300">
 
-  <header x-data="{ open: false }" id="header" class="fixed z-50 ">
+  <header x-data="{ open: false }" id="header" class="fixed top-0 z-50 bg-blue-800 md:bg-opacity-0  ">
 
-    <div class="bg-gray-700 text-gray-100 py-4 text-center flex uppercase font-bold text-sm ">
-      <p class="px-4">24 hr Lift helpline: 020 4512 8520</p><p class="hidden md:block px-4">General Enquires - E: Info@jnllifts.co.uk</p>
+    <div class="bg-blue-900 text-gray-100 py-4 text-center flex justify-between uppercase font-bold text-sm ">
+      
+      <div class="hidden md:flex px-4">
+        <object data="img\logos\phone.png" width="23" height="23"> </object> 
+        <p class="px-4">GENERAL ENQUIRIES & 24 hr EMERGENCY RESPONSE: 020 4512 8520</p>
+      </div>
+      
+      <div class="hidden md:flex px-12">
+        <object data="img\logos\mail.png" width="25" height="25"> </object>
+        <p class="hidden md:block px-2"> E: Info@jnllifts.co.uk </p>
+      </div>
     </div>
 
-    <div class="flex items-stretch justify-between w-screen bg-blue-900 md:bg-opacity-0 md:justify-center">
+    <div class="flex items-stretch justify-between w-screen bg-be-900 md:bg-opacity-0 md:justify-center">
       <a href="#home" class="h-16 bg-white logo md:hidden">
         <img src="img/logo.svg" alt="JNL Lift Services" class="h-full">
       </a>       
     
-      <nav class="font-montserrat items-center justify-between hidden w-full space-x-8 text-sm font-semibold tracking-wider bg-blue-900  uppercase sm:flex xl:text-">
+      <nav class="font-montserrat items-center justify-between hidden w-full space-x-8 text-sm font-semibold tracking-wider  uppercase sm:flex xl:text-">
         <a href="#home" class="h-16 my-1 px-10 logo"><img src="img/logo.svg" alt="JNL Lift Services" class="h-full"></a>
         ,<div class="w-full px-12 flex justify-end space-x-8 text-sm font-semibold tracking-wider text-gray-100"><a href="#services">Services</a>
         <a href="#about">About</a>
@@ -192,12 +203,12 @@
       </nav>
 
       <button @click="open = !open" class="p-3 mr-3 sm:hidden focus:outline-none">
-        <svg x-show="!open" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 text-blue-200">
+        <svg x-show="!open" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 text-blue-900">
           <path fill-rule="evenodd"
             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
             clip-rule="evenodd"></path>
         </svg>
-        <svg x-show="open" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 text-blue-200">
+        <svg x-show="open" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 text-blue-900">
           <path fill-rule="evenodd"
             d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
             clip-rule="evenodd"></path>
@@ -207,7 +218,7 @@
 
     <!-- Mobile Menu -->
     <nav x-show.transition.origin.top.right.scale="open" x-cloak
-      class="absolute top-1 w-full text-center right-0 flex flex-col p-3 mt-16 space-y-2 text-blue-100 transition bg-blue-900">
+      class="absolute top-1 w-full text-center right-0 flex flex-col p-3 mt-16 space-y-2 text-blue-100 transition bg-blue-900 ">
       <a class="px-3 py-1 rounded hover:bg-blue-800" href="#home">Home</a>
       <a class="px-3 py-1 rounded hover:bg-blue-800" href="#services">Services</a>
       <a class="px-3 py-1 rounded hover:bg-blue-800" href="#about">About</a>
@@ -227,10 +238,11 @@
       <div class="bg-gray-800 w-full h-full flex justify-start items-center bg-opacity-50">
         <div class="px-20 lg:px-40">
         <h1
-          class="text-4xl font-black text-transparent sm:text-3xl md:text-5xl lg:text-5xl text-white lg:text-white bebas header-text">
-          Excellent <br>Service</h1>
-        <p class="text-sm fade-in-left text-white md:text-md lg:text-white lg:text-xl bebas">
-          Offering the complete lift package <br>incorporating Quality, Safety and Security         
+          class="text-4xl font-black text-transparent sm:text-3xl md:text-5xl lg:text-5xl text-white bebas header-text">
+          <span class="">JNL </span>Lifts <br><span class="text-indigo-200">Incredible  </span>Service </h1>
+
+        <p class="text-sm fade-in-left text-gray-100 md:text-md lg:text-xl bebas">
+          Offering cost effective lift maintenance and upgrade <br> programs without compromising on quality.      
         </p><br>
         <a href="#partners" class="text-sm py-2 px-4 rounded-full font-bold fade-in-left bg-blue-900 text-white md:text-md lg:text-white lg:text-xl lg:py-4 lg:px-6 bebas">Reviews</a>
       </div>
@@ -357,21 +369,21 @@
         <img src="img/gallery/Berkshire-court-bracknell.jpg" class="object-cover w-full h-full">
         <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-75 group-hover:bg-opacity-75">
           <h2 class="py-1 text-xl font-bold uppercase">Berkshire Court</h2>
-          <p class="px-2 text-sm sm:text-base">Bracknell, Berkshire</p>
+          <p class="px-2 text-sm sm:text-base">A Brand new 3 storey installation, Bracknell, Berkshire</p>
         </figcaption>
       </figure>
       <figure class="relative h-56 col-span-4 group hover-effect">
         <img src="img/gallery/compass-house.jpg" class="object-cover w-full h-full">
         <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-75 group-hover:bg-opacity-75">
           <h2 class="py-1 text-xl font-bold uppercase">Compass House</h2>
-          <p class="px-2 text-sm sm:text-base">Bracknell, Berkshire</p>
+          <p class="px-2 text-sm sm:text-base">New 5 storey Duplex lift installation, Bracknell Berkshire</p>
         </figcaption>
       </figure>
       <figure class="relative h-56 col-span-4 group hover-effect">
         <img src="img/gallery/Park-avenue-hotel.jpg" class="object-cover w-full h-full">
         <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-75 group-hover:bg-opacity-75">
           <h2 class="py-1 text-xl font-bold uppercase">Park Avenue Hotel</h2>
-          <p class="px-2 text-sm sm:text-base">East London</p>
+          <p class="px-2 text-sm sm:text-base">New 2 storey platform installation allowing for disabled access, East London</p>
         </figcaption>
       </figure>
       <figure class="relative h-56 col-span-4 group hover-effect">
@@ -385,7 +397,7 @@
         <img src="img/gallery/bayis-sheli.jpg" class="object-cover w-full h-full">
         <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-75 group-hover:bg-opacity-75">
           <h2 class="py-1 text-xl font-bold uppercase">Bayis Sheli</h2>
-          <p class="px-2 text-sm sm:text-base">Central London</p>
+          <p class="px-2 text-sm sm:text-base">Modernization including a new entrance to allow for a through car, Central London</p>
         </figcaption>
       </figure>
       <figure class="relative h-56 col-span-4 group hover-effect">
@@ -393,6 +405,20 @@
         <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-75 group-hover:bg-opacity-75">
           <h2 class="py-1 text-xl font-bold uppercase">Station Road</h2>
           <p class="px-2 text-sm sm:text-base">New Barnet</p>
+        </figcaption>
+      </figure>
+      <figure class="relative h-56 col-span-4 group hover-effect">
+        <img src="" class="object-cover w-full h-full">
+        <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-75 group-hover:bg-opacity-75">
+          <h2 class="py-1 text-xl font-bold uppercase">Wells Court</h2>
+          <p class="px-2 text-sm sm:text-base">Installation of 3 x passenger lifts, Woking</p>
+        </figcaption>
+      </figure>
+      <figure class="relative h-56 col-span-4 group hover-effect">
+        <img src="" class="object-cover w-full h-full">
+        <figcaption class="absolute bottom-0 w-full transition bg-gray-100 bg-opacity-75 group-hover:bg-opacity-75">
+          <h2 class="py-1 text-xl font-bold uppercase">Summit House</h2>
+          <p class="px-2 text-sm sm:text-base">Controller and door operator upgrade, Bracknell</p>
         </figcaption>
       </figure>
      
@@ -413,76 +439,91 @@
     <div class="row">
       <div class="container">
         <section class="logo-carousel slider flex flex-wrap" data-arrows="true">
-          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image1.png"></div>
-          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image2.png"></div>
-          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image3.png"></div>
-          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image4.png"></div>
-          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image5.png"></div>
-          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image6.png"></div>
-          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image7.png"></div>
-          <div class="slide mx-auto"><img src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image8.png"></div>
+          <div class="slide mx-auto w-56 h-56 overflow-hidden flex items-center sm:h-52"><img src="img\logos\Bondcare.png"></div>
+          <div class="slide mx-auto w-56 h-56 overflow-hidden flex items-center sm:h-52"><img class="h-20" src="img\logos\BRNS.webp"></div>
+          <div class="slide mx-auto w-56 h-56 overflow-hidden flex items-center sm:h-52"><img src="img\logos\foot_logo.svg"></div>
+          <div class="slide mx-auto w-56 h-56 overflow-hidden flex items-center sm:h-52"><img src="img\logos\Midos_282.png"></div>
+          <div class="slide mx-auto w-56 h-56 overflow-hidden flex items-center sm:h-52"><img src="img/logos/moreland.png"></div>
+          <div class="slide mx-auto w-56 h-56 overflow-hidden flex items-center sm:h-52"><img src="img\logos\newbloom-logo.png"></div>
+          <div class="slide mx-auto w-56 h-56 overflow-hidden flex items-center sm:h-52"><img src="img\logos\site__logo__c-exact_w-270_h-71_q-100_r-45.png"></div>
+          <div class="slide mx-auto w-56 h-56 overflow-hidden flex items-center sm:h-52"><img src="img/logos/PlazaEstates-Logo.png"></div>
+          <div class="slide mx-auto w-56 h-56 overflow-hidden flex items-center sm:h-52"><img src="img/logos/foot_logo.png"><div>
         </section>
       </div>
     </div>
   </div>
     
   <div class="mt-20 flex flex-wrap justify-center">
+    
     <div class="max-w-xs my-2 py-4 px-8 mx-2 bg-white shadow-lg rounded-lg">
       <div>
-        <h2 class="text-gray-800 text-2xl font-semibold">Proffesional Service</h2>
-        <p class="text-gray-600">quaerat nam ex commodi hic, suscipit in a veritatis pariatur minus consequuntur!</p>
+        <h2 class="text-gray-800 text-2xl font-semibold">Professional Service</h2>
+        <p class="text-gray-600">Responsive and cost effective! Looking at the long term relationship with the client.</p>
       </div>
       <div class="flex justify-end mt-4">
-        <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
+        <a href="https://www.google.com/search?client=firefox-b-d&q=jnl+lifts#lrd=0x48761113503d184d:0xb474c2764bed24d4,1,,," 
+           target="_blank"
+           class="text-xl font-medium text-indigo-500">Amira Ackerman</a>
       </div>
     </div>
 
     <div class="max-w-xs my-2 py-4 px-4 mx-2 bg-white shadow-lg rounded-lg">
       <div>
         <h2 class="text-gray-800 text-2xl font-semibold">Excellent Customer Care</h2>
-        <p class="text-gray-600">odi hic, suscipit in a veritatis pariatur minus consequuntur!</p>
+        <p class="text-gray-600">Efficient, helpful and a pleasure to deal with.  Good quality reports, quick timescales and turnarounds</p>
       </div>
       <div class="flex justify-end mt-4">
-        <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
+        <a href="https://www.google.com/search?client=firefox-b-d&q=jnl+lifts#lrd=0x48761113503d184d:0xb474c2764bed24d4,1,,," 
+        target="_blank"
+        class="text-xl font-medium text-indigo-500">CEC Energy</a>
       </div>
     </div>
     
     <div class="max-w-xs my-2 py-4 px-8 mx-2 bg-white shadow-lg rounded-lg">
       <div>
-        <h2 class="text-gray-800 text-2xl font-semibold">Fantastic Response Time</h2>
-        <p class="text-gray-600">scipit in a veritatis pariatur minus consequuntur!</p>
+        <h2 class="text-gray-800 text-2xl font-semibold">Fantastic Response</h2>
+        <p class="text-gray-600">They had technician on site within an hour. Good looking chaps as well!</p>
       </div>
       <div class="flex justify-end mt-4">
-        <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
+        <a href="https://www.google.com/search?client=firefox-b-d&q=jnl+lifts#lrd=0x48761113503d184d:0xb474c2764bed24d4,1,,," 
+        target="_blank"
+        class="text-xl font-medium text-indigo-500">Roselyn Teller</a>
       </div>
     </div>
+
     <div class="max-w-xs my-2 py-4 px-8 mx-2 bg-white shadow-lg rounded-lg">
       <div>
-        <h2 class="text-gray-800 text-2xl font-semibold">Proffesional Service</h2>
-        <p class="text-gray-600">quaerat nam ex commodi hic, suscipit in a veritatis pariatur minus consequuntur!</p>
+        <h2 class="text-gray-800 text-2xl font-semibold">Quick & Efficient</h2>
+        <p class="text-gray-600">I used them for a hotel, they were quick easy and very good price!!!! Came back to service, Top quality</p>
       </div>
       <div class="flex justify-end mt-4">
-        <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
+        <a href="https://www.google.com/search?client=firefox-b-d&q=jnl+lifts#lrd=0x48761113503d184d:0xb474c2764bed24d4,1,,," 
+        target="_blank"
+        class="text-xl font-medium text-indigo-500">Tony Gardner</a>
       </div>
     </div>
 
     <div class="max-w-xs my-2 py-4 px-4 mx-2 bg-white shadow-lg rounded-lg">
       <div>
-        <h2 class="text-gray-800 text-2xl font-semibold">Excellent Customer Care</h2>
-        <p class="text-gray-600">odi hic, suscipit in a veritatis pariatur minus consequuntur!</p>
+        <h2 class="text-gray-800 text-2xl font-semibold">Great Service</h2>
+        <p class="text-gray-600">I am a Happy Customer and would highly recommend JNL. A Pleasure to deal with.</p>
       </div>
       <div class="flex justify-end mt-4">
-        <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
+        <a href="https://www.google.com/search?client=firefox-b-d&q=jnl+lifts#lrd=0x48761113503d184d:0xb474c2764bed24d4,1,,," 
+        target="_blank"
+        class="text-xl font-medium text-indigo-500">Moses Shreiber</a>
       </div>
     </div>
     
     <div class="max-w-xs my-2 py-4 px-8 mx-2 bg-white shadow-lg rounded-lg">
       <div>
-        <h2 class="text-gray-800 text-2xl font-semibold">Fantastic Response Time</h2>
-        <p class="text-gray-600">scipit in a veritatis pariatur minus consequuntur!</p>
+        <h2 class="text-gray-800 text-2xl font-semibold">Highly Reccomend</h2>
+        <p class="text-gray-600">I have no reservations in recommended this company or Marcel Last.</p>
       </div>
       <div class="flex justify-end mt-4">
-        <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
+        <a href="https://www.google.com/search?client=firefox-b-d&q=jnl+lifts#lrd=0x48761113503d184d:0xb474c2764bed24d4,1,,," 
+        target="_blank"
+        class="text-xl font-medium text-indigo-500">Marcus Hill</a>
       </div>
     </div>
   </div>
@@ -601,7 +642,7 @@
     </div>
   </footer>
   <!-- Navbar transparant to solid on scroll -->
-  <!-- <script>
+  <script>
     const header = document.getElementById('header')
 
     window.addEventListener('scroll', e => {
@@ -613,7 +654,7 @@
       header.classList.remove(shouldBeTransparent ? 'md:bg-opacity-100' : 'md:bg-opacity-0')
       header.classList.add(shouldBeTransparent ? 'md:bg-opacity-0' : 'md:bg-opacity-100')
     }
-  </script> -->
+  </script>
   <!-- Alpine.js -->
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.min.js" defer></script>
 </body>
